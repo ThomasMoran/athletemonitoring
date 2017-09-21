@@ -1,0 +1,57 @@
+html {
+	height:100%;
+}
+
+#main {
+	height: 100%;
+}
+
+#menu-bottom {
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 0px;
+	height: 5%;
+
+}
+
+#menu-bottom:hover {
+	color: purple;
+}
+
+#replyForm {
+	position: fixed;
+	bottom: 8%;
+	width: 99.5%;
+}
+
+#date_start {
+	border: 2px solid blue;
+	height: 50px;
+	width: 49.5%;
+	display: inline;
+	float: left;
+}
+
+#date_end {
+	border: 2px solid black;
+	height: 50px;
+	width: 49.5%;
+	display: inline;
+	float: right;
+}
+
+div.ui.container, div.calendar  {
+	height: 100%;
+}
+div.ui.calendar {
+	height: 60%;
+}
+.ui.table {
+	height: 90%;
+	border-radius: 0;
+}
+/*
+.ui.calendar .ui.table tr td{
+	background-color: green;
+	border-radius: 100%;
+}*/
