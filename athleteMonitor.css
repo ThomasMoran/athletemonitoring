@@ -1,53 +1,77 @@
 html {
-	height:100%;
+	height:100vh;
+	max-height: 100vh;
+	/*overflow-y: hidden; // hide vertical*/
+	/*overflow-x: hidden; // hide horizontal*/
+}
+
+body {
+	line-height: inherit;
 }
 
 #main {
-	height: 100%;
+	height: 93vh;
 }
 
 #menu-bottom {
 	position: fixed;
-	bottom: 0;
+	/*bottom: 0;*/
 	margin-bottom: 0px;
-	height: 5%;
+	height: 7vh;
+	width: 100vw
 
 }
 
-#menu-bottom:hover {
-	color: purple;
-}
-
-#replyForm {
-	position: fixed;
-	bottom: 8%;
-	width: 99.5%;
-}
-
-#date_start {
-	border: 2px solid blue;
+#dateHead{
 	height: 50px;
-	width: 49.5%;
+	background-color: black;
+}
+
+#ddIcon {
+    font-size: 35px;
+    margin: 0;
+    padding-top: 2%;
+}
+
+.header {
+	/*border: 2px solid red;*/
+	height: inherit;
 	display: inline;
+	text-align: center;
+	/*background-color: black;*/
+	color: white;
+
+}
+#date_dropdownIcon {
+	width: 10vw;
 	float: left;
 }
 
-#date_end {
-	border: 2px solid black;
-	height: 50px;
-	width: 49.5%;
-	display: inline;
-	float: right;
+#date_start {
+	width: 42vw;
+	float: left;
+	padding-top: 2%;
+	font-size: 20px;
 }
 
-div.ui.container, div.calendar  {
-	height: 100%;
+#date_divider {
+	width: 6vw;
+	float: left;
+	font-size: 35px;
 }
-div.ui.calendar {
-	height: 60%;
+
+#date_end {
+	width: 42vw;
+	float: right;
+	padding-top: 2%;
+	font-size: 20px;
 }
+
+
+/* CALENDAR */
+
 .ui.table {
-	height: 90%;
+	height: 50vh;
 	border-radius: 0;
 }
 /*
@@ -55,3 +79,64 @@ div.ui.calendar {
 	background-color: green;
 	border-radius: 100%;
 }*/
+
+div.ui.grid {
+	/*padding: 0px;*/
+	margin-left: 0;
+	
+}
+
+#iconData {
+	font-size: 5em;
+    width: -webkit-fill-available;
+    height: inherit;
+    border:0.5px solid black;
+    border-radius: 5px;
+    padding: 15px 0 15px 0;
+}
+
+
+
+/*SCROLL EFFECT*/
+
+::-webkit-scrollbar{display:none;}
+::-webkit-scrollbar-button{width:2px;height:2px;}
+
+
+.horizontal-scroll-wrapper{
+  position:absolute;
+  display:block;
+  /*left:0;*/
+  width:170px;
+  max-height:640px;
+  margin:0;
+  background:inherit;
+  overflow-y:auto;
+  overflow-x:hidden;
+  transform:rotate(-90deg) translateY(-170px);
+  transform-origin:right top;
+}
+.horizontal-scroll-wrapper > div{
+  display:block;
+  padding:5px;
+  transform:rotate(90deg);
+  transform-origin: right top;
+}
+
+.squares{
+  padding:150px 0 0 0;
+}
+
+.squares > div{
+	width:150px;
+	height:150px;
+	margin:10px;
+	display: block; 
+	opacity: .6; 
+	border-radius: 6px; 
+}
+
+.blue { background-color: #06F; }
+.green { background-color: #0f9d00; }
+.red { background-color: #F00; }
+.yellow { background-color: #ffea00; }

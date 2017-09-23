@@ -1,8 +1,10 @@
 function main() {
 	getCal();
+	initHeader();
 }
 
 function getCal() {
+	$('.calendarCon').hide();
 	$('#myDateRangeChooser').calendar({
   		inline: true,
   		type: 'date',
@@ -38,6 +40,40 @@ function getCal() {
     		}
     	}
 
+	});
+}
+
+function initHeader() {
+	// $(".horizontal-scroll-wrapper").css('max-height', $(".ui.container").width());
+	$('#ddIcon').click(
+		function(){ 
+			if (this.className === 'chevron down icon') {
+				// $('#ddIcon').transition('fade');
+				$('#ddIcon').fadeOut(100, function() {
+					this.className = 'chevron up icon';
+					$('#ddIcon').fadeIn(100);
+					// $('.calendarCon').show();
+					$('.calendarCon').slideDown(200)
+				});
+			}
+			else {
+				$('#ddIcon').fadeOut(100, function() {
+					this.className = 'chevron down icon';
+					$('#ddIcon').fadeIn(100);
+					$('.calendarCon').slideUp(200)
+				});; 
+			}
+			
+		}
+	);
+}
+
+function getScrollEffect() {
+	$(document).ready(function() {
+		$('#scrollContainer').mousewheel(function(e, delta) {
+			this.scrollLeft -= (delta * 40);
+			e.preventDefault();
+		});
 	});
 }
 

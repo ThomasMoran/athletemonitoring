@@ -3,12 +3,12 @@
 
 <head>
     <title>Athlete Monitoring System</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <script type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.css">
     <link rel="stylesheet" type="text/css" href="athleteMonitor.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
-
     <!-- CALENDAR -->
     <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
     <!-- <link href="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.css" rel="stylesheet" type="text/css" /> -->
@@ -19,32 +19,50 @@
 
 <body>
     <div id="main">
-    <!-- CALENDAR -->
-        <div class="ui container">
-            <div style="">
-                <p id="date_start" type="text" ></p>
-                <p id="date_end" type="text" ></p>
+        <!-- CALENDAR -->
+        <div id="dateHead">
+            <div id="date_dropdownIcon" class="header" type="text"><i id="ddIcon" class="chevron down icon"></i></div>
+            <div id="date_start" class="header"></div>
+            <div id="date_divider" class="header">-</div>
+            <div id="date_end" class="header"></div>
+        </div>
+        <div class="calendarCon">
+            <div id="container-calendar" class="ui container">
+                <div class="ui calendar" id="myDateRangeChooser">
+                </div>
+                <!-- DATA TYPES -->
+                <div class="horizontal-scroll-wrapper squares">
+                    <div class="yellow">item 1</div>
+                    <div class="green">item 2</div>
+                    <div class="red">item 3</div>
+                    <div class="blue">item 4</div>
+                    <div class="yellow">item 5</div>
+                    <div class="green">item 6</div>
+                    <div class="red">item 7</div>
+                    <div class="blue">item 8</div>
+                    <div class="yellow">item 9</div>
+                    <div class="green">item 10</div>
+                    <div class="red">item 11</div>
+                    <div class="blue">item 12</div>
+                </div>
             </div>
-            <div class="ui calendar" id="myDateRangeChooser">
-            </div>
+            <br>
+            <br>
+            
         </div>
     </div>
-
-<!-- MENU BOTTOM -->
+    <!-- MENU BOTTOM -->
     <div id="menu-bottom" class="ui blue three item menu">
-      <a class="item">
+        <a class="item">
         Home
       </a>
-      <a class="item active">
+        <a class="item active">
         Messages
       </a>
-      <a class="item">
+        <a class="item">
         Friends
       </a>
     </div>
-
-
-
     <!-- JS scripts -->
     <script src="athleteMonitor.js"></script>
 </body>
