@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Athlete Monitoring System</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <script type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.css">
+    <link rel="stylesheet" type="text/css" href="athleteMonitor.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="calendar2.css">
+    <script src="calendar2.js"></script>
+</head>
+
+<body>
+    <!-- Sashboard Header - Calendar/DateSelect -->
+    <div id="dateHead">
+        <div id="date_dropdownIcon" class="header" type="text"><i id="ddIcon" class="chevron down icon"></i></div>
+        <div id="date_start" class="header"></div>
+        <div id="date_divider" class="header">-</div>
+        <div id="date_end" class="header"></div>
+    </div>
+    <div id="main">
+        <canvas id="myChart" width="auto" height="300"></canvas>
+        <div class="insights">
+            <h2>Insights</h2>
+            <div class="ui relaxed divided list">
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI</a>
+                        <div class="description">Updated 10 mins ago</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Docs</a>
+                        <div class="description">Updated 22 mins ago</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <i class="large github middle aligned icon"></i>
+                    <div class="content">
+                        <a class="header">Semantic-Org/Semantic-UI-Meteor</a>
+                        <div class="description">Updated 34 mins ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MENU BOTTOM -->
+    <div id="menu-bottom" >
+        <div class="ui borderless menu">
+            <a class="item"><i class="teal unordered list icon"></i></a>
+            <a class="item"><i class="teal pie chart icon"></i></a>
+            <a class="item"><i class="teal setting icon"></i></a>
+        </div>
+    </div>
+    <!-- JS scripts -->
+    <script src="athleteMonitor.js"></script>
+</body>
+
+</html>

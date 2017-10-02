@@ -10,12 +10,12 @@ body {
 }
 
 #main {
-	height: 93vh;
+	/*height: 93vh;*/
 }
 
 #menu-bottom {
 	position: fixed;
-	/*bottom: 0;*/
+	bottom: 0;
 	margin-bottom: 0px;
 	height: 7vh;
 	width: 100vw
@@ -34,37 +34,39 @@ body {
 }
 
 .header {
-	/*border: 2px solid red;*/
 	height: inherit;
 	display: inline;
 	text-align: center;
-	/*background-color: black;*/
 	color: white;
-
 }
+
 #date_dropdownIcon {
 	width: 10vw;
 	float: left;
+	padding-left: 4%;	
 }
 
 #date_start {
 	width: 42vw;
 	float: left;
-	padding-top: 2%;
 	font-size: 20px;
+	text-align: center;
+	line-height: 2.3em;
 }
 
 #date_divider {
 	width: 6vw;
 	float: left;
 	font-size: 35px;
+	text-align: center;
 }
 
 #date_end {
 	width: 42vw;
 	float: right;
-	padding-top: 2%;
 	font-size: 20px;
+	text-align: center;
+	line-height: 2.3em;
 }
 
 
@@ -93,6 +95,14 @@ div.ui.grid {
     border:0.5px solid black;
     border-radius: 5px;
     padding: 15px 0 15px 0;
+}
+
+#dashboardSelect {
+	padding: 4%;
+}
+#metricSelect {
+     padding-top: 1em;
+     padding-bottom: 1em;
 }
 
 
@@ -134,9 +144,85 @@ div.ui.grid {
 	display: block; 
 	opacity: .6; 
 	border-radius: 6px; 
+    background-color: grey;
 }
 
-.blue { background-color: #06F; }
-.green { background-color: #0f9d00; }
-.red { background-color: #F00; }
-.yellow { background-color: #ffea00; }
+#metrics_icon {
+	color: white;
+    height: fit-content;
+    width: -webkit-fill-available;
+}
+/******************************************************************
+              
+DASHBOARD Page
+
+********************************************************************/
+
+.insights {
+	padding: 4%;
+}
+
+
+/******************************************************************
+              
+Entry Page
+
+********************************************************************/
+
+#cardHolder {
+	padding: 4%;
+}
+
+.ui.menu {
+	height: -webkit-fill-available;
+}
+.ui.menu .item {
+	width: 33.33%;
+}
+
+.ui.menu .item > i.icon {
+	font-size: 3em;
+    margin: auto;
+}
+
+.header {
+	text-align: left;
+}
+.ui.card {
+	min-width: 100%;
+}
+
+#entryDateControl {
+	padding-top: 2%;
+	width: 100%;
+}
+
+#entryDateControl>div{
+	margin: auto;
+    width: 50%;
+}
+/*#entryDatControl-buttons {
+    margin: auto;
+    width: 50%;
+}*/
+#entryDateControl .ui.buttons {
+    width: -webkit-fill-available;
+}
+
+#entryDateControl>div>.ui.button {
+	width: 150px;
+}
+
+#newEntryButton {
+    position: fixed;
+    right: 4%;
+    bottom: 10%;
+    z-index: 10;
+}
+
+#newEntryButton>.ui.button {
+	width: 60px;
+	height: 60px;
+	border: 0px;
+	border-radius: 100%;
+}

@@ -18,50 +18,66 @@
 </head>
 
 <body>
+    <!-- CALENDAR -->
+    <div id="dateHead">
+        <div id="date_dropdownIcon" class="header" type="text"><i id="ddIcon" class="chevron down icon"></i></div>
+        <div id="date_start" class="header"></div>
+        <div id="date_divider" class="header">-</div>
+        <div id="date_end" class="header"></div>
+    </div>
     <div id="main">
-        <!-- CALENDAR -->
-        <div id="dateHead">
-            <div id="date_dropdownIcon" class="header" type="text"><i id="ddIcon" class="chevron down icon"></i></div>
-            <div id="date_start" class="header"></div>
-            <div id="date_divider" class="header">-</div>
-            <div id="date_end" class="header"></div>
+        <div id="container-calendar" class="ui container">
+            <div class="ui calendar" id="myDateRangeChooser">
+            </div>
         </div>
-        <div class="calendarCon">
-            <div id="container-calendar" class="ui container">
-                <div class="ui calendar" id="myDateRangeChooser">
+        <div class="commonRanges">
+        </div>
+        <div id="dashboardSelect">
+            <div class="ui celled list">
+                <div id="metricSelect" class="item">
+                    <div class="content">
+                        <div class="ui slider checkbox">
+                            <input type="checkbox" name="rhr">
+                            <label>Resting Heart Rate</label>
+                        </div>
+                    </div>
                 </div>
-                <!-- DATA TYPES -->
-                <div class="horizontal-scroll-wrapper squares">
-                    <div class="yellow">item 1</div>
-                    <div class="green">item 2</div>
-                    <div class="red">item 3</div>
-                    <div class="blue">item 4</div>
-                    <div class="yellow">item 5</div>
-                    <div class="green">item 6</div>
-                    <div class="red">item 7</div>
-                    <div class="blue">item 8</div>
-                    <div class="yellow">item 9</div>
-                    <div class="green">item 10</div>
-                    <div class="red">item 11</div>
-                    <div class="blue">item 12</div>
+                <div id="metricSelect" class="item">
+                    <div class="content">
+                        <div class="ui slider checkbox">
+                            <input type="checkbox" name="hrv">
+                            <label>HRV</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="metricSelect" class="item">
+                    <div class="content">
+                        <div class="ui slider checkbox">
+                            <input type="checkbox" name="sleepquality">
+                            <label>Sleep Quality</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <br>
-            <br>
-            
         </div>
+        <!-- DATA TYPES -->
+        <!-- <div class="horizontal-scroll-wrapper squares">
+            <div><i id="metrics_icon" class="massive heart icon"></i></div>
+            <div><i id="metrics_icon" class="massive calendar icon"></i></div>
+            <div><i id="metrics_icon" class="massive heart icon"></i></div>
+            <div><i id="metrics_icon" class="massive calendar icon"></i></div>
+            <div><i id="metrics_icon" class="massive heart icon"></i></div>
+            <div><i id="metrics_icon" class="massive calendar icon"></i></div>
+            <div><i id="metrics_icon" class="massive heart icon"></i></div>
+        </div> -->
     </div>
     <!-- MENU BOTTOM -->
-    <div id="menu-bottom" class="ui blue three item menu">
-        <a class="item">
-        Home
-      </a>
-        <a class="item active">
-        Messages
-      </a>
-        <a class="item">
-        Friends
-      </a>
+    <div id="menu-bottom">
+        <div class="ui borderless menu">
+            <a class="item"><i class="teal unordered list icon"></i></a>
+            <a class="item"><i class="teal pie chart icon"></i></a>
+            <a class="item"><i class="teal setting icon"></i></a>
+        </div>
     </div>
     <!-- JS scripts -->
     <script src="athleteMonitor.js"></script>

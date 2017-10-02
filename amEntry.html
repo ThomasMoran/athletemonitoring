@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Athlete Monitoring System</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <script type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.css">
+    <link rel="stylesheet" type="text/css" href="athleteMonitor.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="calendar2.css">
+    <script src="calendar2.js"></script>
+</head>
+
+<body>
+    <!-- Sashboard Header - Calendar/DateSelect -->
+    <div id="modalId" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">Sleep Metrics</div>
+        <div class="scrolling content">
+            <p>Very long content goes here</p>
+            <div id="entryForm">
+                <form class="ui form">
+                    <div class="field">
+                        <label>First Name</label>
+                        <input type="text" name="first-name" placeholder="First Name">
+                    </div>
+                    <div class="field">
+                        <label>Last Name</label>
+                        <input type="text" name="last-name" placeholder="Last Name">
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" tabindex="0" class="hidden">
+                            <label>I agree to the Terms and Conditions</label>
+                        </div>
+                    </div>
+                    <button class="ui button" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="entryDateControl">
+        <div>
+            <button class="ui teal labeled icon button">
+                <i class="left arrow icon"></i> Previous
+            </button>
+            <button class="ui teal right labeled icon button">
+                <i class="right arrow icon"></i> Next
+            </button>
+            
+        </div>
+    </div>
+    <div id="main">
+        <div id="cardHolder">
+            <h2>Wed 27 Sept 2017</h2>
+            <div class="ui card">
+                <div class="content">
+                    <i class="right floated large trash icon"></i>
+                    <i onclick="modalPopUp()" class="right floated large edit icon"></i>
+                    <div class="header">Sleep</div>
+                    <div class="description">
+                        <p>Total Sleep (hrs): XX</p>
+                        <p>Deep Sleep: XX</p>
+                        <p>Light Sleep: XX</p>
+                        <p>Sleep Quality: XX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui card">
+                <div class="content">
+                    <i class="right floated large trash icon"></i>
+                    <i onclick="modalPopUp()" class="right floated large edit icon"></i>
+                    <div class="header">Heart Rate</div>
+                    <div class="description">
+                        <p>Resting HR (morning): XX</p>
+                        <p>HRV: XX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui card">
+                <div class="content">
+                    <i class="right floated large trash icon"></i>
+                    <i onclick="modalPopUp()" class="right floated large edit icon"></i>
+                    <div class="header">Workout #1</div>
+                    <div class="description">
+                        <p>Time: XX</p>
+                        <p>Weather: XX</p>
+                        <p>Duration: XX</p>
+                        <p>LoE: XX</p>
+                        <p>Type: XX</p>
+                        <p>Max HR: XX</p>
+                        <p>Min HR: XX</p>
+                        <p>Average HR: XX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ui card">
+                <div class="content">
+                    <i class="right floated large trash icon"></i>
+                    <i onclick="modalPopUp()" class="right floated large edit icon"></i>
+                    <div class="header">Workout #2</div>
+                    <div class="description">
+                        <p>Time: XX</p>
+                        <p>Weather: XX</p>
+                        <p>Duration: XX</p>
+                        <p>LoE: XX</p>
+                        <p>Type: XX</p>
+                        <p>Max HR: XX</p>
+                        <p>Min HR: XX</p>
+                        <p>Average HR: XX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="newEntryButton">
+        <button class="black ui icon button">
+            <i class="plus big icon"></i>
+        </button>
+    </div>
+    <!-- MENU BOTTOM -->
+    <div id="menu-bottom">
+        <div class="ui borderless menu">
+            <a class="item"><i class="teal unordered list icon"></i></a>
+            <a class="item"><i class="teal pie chart icon"></i></a>
+            <a class="item"><i class="teal setting icon"></i></a>
+        </div>
+    </div>
+    <!-- JS scripts -->
+    <script src="athleteMonitor.js"></script>
+</body>
+
+</html>

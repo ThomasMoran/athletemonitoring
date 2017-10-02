@@ -1,10 +1,12 @@
 function main() {
 	getCal();
 	initHeader();
+	initChart();
+    modalPopUp();
 }
 
 function getCal() {
-	$('.calendarCon').hide();
+	// $('#main').hide();
 	$('#myDateRangeChooser').calendar({
   		inline: true,
   		type: 'date',
@@ -43,6 +45,11 @@ function getCal() {
 	});
 }
 
+function modalPopUp() {
+    // create modal
+    $('#modalId').modal('show');
+}
+
 function initHeader() {
 	// $(".horizontal-scroll-wrapper").css('max-height', $(".ui.container").width());
 	$('#ddIcon').click(
@@ -53,19 +60,60 @@ function initHeader() {
 					this.className = 'chevron up icon';
 					$('#ddIcon').fadeIn(100);
 					// $('.calendarCon').show();
-					$('.calendarCon').slideDown(200)
+					$('#main').slideDown(200)
 				});
 			}
 			else {
 				$('#ddIcon').fadeOut(100, function() {
 					this.className = 'chevron down icon';
 					$('#ddIcon').fadeIn(100);
-					$('.calendarCon').slideUp(200)
+					$('#main').slideUp(200)
 				});; 
 			}
 			
 		}
 	);
+}
+
+function initChart() {
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            }
+        }
+    });
+
 }
 
 function getScrollEffect() {
