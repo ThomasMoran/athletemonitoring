@@ -226,3 +226,15 @@ Entry Page
 	border: 0px;
 	border-radius: 100%;
 }
+
+
+/******************************************************************
+              
+New Entry Page
+
+********************************************************************/
+
+.ui.form .fields {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
