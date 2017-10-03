@@ -3,6 +3,19 @@ function main() {
 	initHeader();
 	initChart();
     modalPopUp();
+    newEntryPage();
+    console.log('clicked yyyyyyyyyyyyyyyyyyyy');
+}
+
+function newEntryPage() {
+    console.log('clicked xxxxxxxxxxxxxxxxxxxx');
+    $('.radio-group .radio').click(function() {
+        $(this).parent().find('.radio').removeClass('selected');
+        $(this).addClass('selected');
+        var val = $(this).attr('data-value');
+        //alert(val);
+        $(this).parent().find('input').val(val);
+    });
 }
 
 function getCal() {

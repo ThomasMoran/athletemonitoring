@@ -238,3 +238,41 @@ New Entry Page
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
 }
+
+#workoutType {
+	width: 100%;
+}
+.radio-group{
+	margin: auto;
+    width: 90%;
+    position: relative;
+}
+
+.radio{
+    display: inline-block;
+    width: 29%;
+    border-radius: 2px;
+    background-color: lightgrey;
+    border: 2px solid lightgrey;
+    cursor: pointer;
+    margin: 10px; 
+    text-align: center;
+    padding: 5px;
+}
+
+.radio.selected{
+    color: white;
+    background-color: #00B5AD;
+    border-color: #00B5AD;
+}
+
+
+/*slider*/
+.rangeSliderValue {
+	border: 1px solid rgba(34, 36, 38, 0.15);
+    padding: 2px;
+    min-width: 30px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 0.28571429rem;
+}

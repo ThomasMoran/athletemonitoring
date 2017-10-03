@@ -4,14 +4,19 @@
 <head>
     <title>Athlete Monitoring System</title>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <script type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.css">
-    <link rel="stylesheet" type="text/css" href="athleteMonitor.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/semantic.css">
+    <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="Semantic-UI-CSS-master/rangeSlider.css">
+    <script src="Semantic-UI-CSS-master/rangeSlider.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="calendar2.css">
     <script src="calendar2.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="athleteMonitor.css">
 </head>
 
 <body>
@@ -52,54 +57,48 @@
                 <br>
                 <br>
                 <div class="field">
-                    <label>Type</label>
-                    <input type="text" name="first-name" placeholder="First Name">
-                </div>
-                <div>
-                    <div class="ui button" tabindex="0">Focusable</div>
-                    <div class="ui button" tabindex="0">Focusable</div>
-                    <div class="ui button" tabindex="0">Focusable</div>
-                    <br>
-                    <br>
-                </div>
-                <div class="fields">
-                    <div class="field">
-                      <label>Duration (mins)</label>
-                      <input type="text" placeholder="First Name">
-                    </div>
-                    <div class="field">
-                      <label>Distance (miles)</label>
-                      <input type="text" placeholder="Middle Name">
+                    <div id="workoutType">
+                        <label><strong>Type</strong></label>
+                        <div class="radio-group">
+                            <div class='radio' data-value="One">Run</div>
+                            <div class='radio' data-value="Two">Workout</div>
+                            <div class='radio' data-value="Three">Gym</div>
+                            <br>
+                            <br>
+                        </div>
                     </div>
                 </div>
                 <div class="fields">
                     <div class="field">
-                      <label>Ave. Pace (min/mile)</label>
-                      <input type="text" placeholder="First Name">
+                        <label>Duration (mins)</label>
+                        <input type="text" placeholder="First Name">
                     </div>
                     <div class="field">
-                      <label>Ave. HR (bpm)</label>
-                      <input type="text" placeholder="Middle Name">
+                        <label>Distance (miles)</label>
+                        <input type="text" placeholder="Middle Name">
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="field">
+                        <label>Ave. Pace (min/mile)</label>
+                        <input type="text" placeholder="First Name">
+                    </div>
+                    <div class="field">
+                        <label>Ave. HR (bpm)</label>
+                        <input type="text" placeholder="Middle Name">
                     </div>
                 </div>
                 <div class="field">
-                    <label>RPE</label>
-                    <input type="text" name="last-name" placeholder="Last Name">
+                    <label>RPE:&nbsp;&nbsp;&nbsp;<span class="rangeSliderValue" id="rpe-range-display-1"></span></label>
+                    <!-- <input type="text" name="last-name" placeholder="Last Name"> -->
+                    <div class="ui teal range" id="rpe-range-1"></div>
+                    <br>
                 </div>
-
-
+                
                 <button class="ui button" type="submit">Submit</button>
             </form>
         </div>
     </div>
-
-    <div id="newEntryButton">
-        <button class="black ui icon button">
-            <i class="plus big icon"></i>
-        </button>
-    </div>
-
-
     <!-- MENU BOTTOM -->
     <div id="menu-bottom">
         <div class="ui borderless menu">
@@ -109,6 +108,24 @@
         </div>
     </div>
     <!-- JS scripts -->
+    <script type="text/javascript">
+        $('.radio-group .radio').click(function() {
+            $(this).parent().find('.radio').removeClass('selected');
+            $(this).addClass('selected');
+            // var val = $(this).attr('data-value');
+        });
+
+        $(document).ready(function() {
+            $('#rpe-range-1').range({
+                min: 0,
+                max: 10,
+                start: 5,
+                onChange: function(value) {
+                    $('#rpe-range-display-1').html(value);
+                }
+            });
+        });
+    </script>
     <script src="athleteMonitor.js"></script>
 </body>
 

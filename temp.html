@@ -15,27 +15,34 @@
     <link rel="stylesheet" type="text/css" href="calendar2.css">
     <script src="calendar2.js"></script>
     <script src="jquery.mousewheel.js"></script>
+
 </head>
 
 <body>
-        <div id="scrollContainer">
-            <div class="scrollsection blue"></div>
-            <div class="scrollsection green"></div>
-            <div class="scrollsection red"></div>
-            <div class="scrollsection yellow"></div>
-            <div class="scrollsection blue"></div>
-            <div class="scrollsection red"></div>
-            <div class="scrollsection blue"></div>
-            <div class="scrollsection yellow"></div>
-            <div class="scrollsection blue"></div>
-            <div class="scrollsection green"></div>
-            <div class="scrollclear"></div>
-        </div>
-            
-        
-    </div>
+    <form method="post" action="send.php">
+      <div class="radio-group">
+          <div class='radio' data-value="One">Run</div>
+          <div class='radio' data-value="Two">Workout</div>
+          <div class='radio' data-value="Three">Gym</div>
+          <br/>
+          <input type="text" id="radio-value" name="radio-value" />
+      </div>
+      
+    </form>
     <!-- JS scripts -->
-    <script src="athleteMonitor.js"></script>
+    <script type="text/javascript">
+        
+        $('.radio-group .radio').click(function() {
+            console.log('clicked xxxxxxxxxxxxxxxxxxxx');
+            $(this).parent().find('.radio').removeClass('selected');
+            $(this).addClass('selected');
+            var val = $(this).attr('data-value');
+            //alert(val);
+            $(this).parent().find('input').val(val);
+        });
+
+    </script>
+    <!-- <script src="athleteMonitor.js"></script> -->
 </body>
 
 </html>
