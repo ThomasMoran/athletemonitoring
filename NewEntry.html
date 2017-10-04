@@ -68,24 +68,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="fields">
+                <div class="three fields">
                     <div class="field">
                         <label>Duration (mins)</label>
-                        <input type="text" placeholder="First Name">
+                        <input type="time" step="1" placeholder="hh:mm:ss">
                     </div>
                     <div class="field">
                         <label>Distance (miles)</label>
-                        <input type="text" placeholder="Middle Name">
+                        <input type="number" placeholder="e.g. 8.6">
+                    </div>
+                    <div class="field">
+                        <label>Ave. Pace (min/mile)</label>
+                        <!-- <div class="rangeSliderValue">asas</div> -->
+                        <input type="text" placeholder="First Name" disabled="true">
                     </div>
                 </div>
                 <div class="fields">
                     <div class="field">
-                        <label>Ave. Pace (min/mile)</label>
-                        <input type="text" placeholder="First Name">
-                    </div>
-                    <div class="field">
                         <label>Ave. HR (bpm)</label>
-                        <input type="text" placeholder="Middle Name">
+                        <input type="number" min="20" max="250" placeholder="e.g. 140">
                     </div>
                 </div>
                 <div class="field">
@@ -94,6 +95,7 @@
                     <div class="ui teal range" id="rpe-range-1"></div>
                     <br>
                 </div>
+
                 
                 <button class="ui button" type="submit">Submit</button>
             </form>
@@ -108,24 +110,6 @@
         </div>
     </div>
     <!-- JS scripts -->
-    <script type="text/javascript">
-        $('.radio-group .radio').click(function() {
-            $(this).parent().find('.radio').removeClass('selected');
-            $(this).addClass('selected');
-            // var val = $(this).attr('data-value');
-        });
-
-        $(document).ready(function() {
-            $('#rpe-range-1').range({
-                min: 0,
-                max: 10,
-                start: 5,
-                onChange: function(value) {
-                    $('#rpe-range-display-1').html(value);
-                }
-            });
-        });
-    </script>
     <script src="athleteMonitor.js"></script>
 </body>
 

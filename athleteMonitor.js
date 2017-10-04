@@ -1,21 +1,39 @@
 function main() {
 	getCal();
 	initHeader();
-	initChart();
-    modalPopUp();
+	// initChart();
+    // modalPopUp();
     newEntryPage();
     console.log('clicked yyyyyyyyyyyyyyyyyyyy');
 }
 
 function newEntryPage() {
-    console.log('clicked xxxxxxxxxxxxxxxxxxxx');
-    $('.radio-group .radio').click(function() {
-        $(this).parent().find('.radio').removeClass('selected');
-        $(this).addClass('selected');
-        var val = $(this).attr('data-value');
-        //alert(val);
-        $(this).parent().find('input').val(val);
-    });
+        $('.radio-group .radio').click(function() {
+            $(this).parent().find('.radio').removeClass('selected');
+            $(this).addClass('selected');
+            // var val = $(this).attr('data-value');
+        });
+
+        $(document).ready(function() {
+            $('#rpe-range-1').range({
+                min: 0,
+                max: 10,
+                start: 5,
+                onChange: function(value) {
+                    $('#rpe-range-display-1').html(value);
+                }
+            });
+        });
+        $(document).ready(function() {
+            $('#rpe-range-2').range({
+                min: 0,
+                max: 10,
+                start: 5,
+                onChange: function(value) {
+                    $('#rpe-range-display-2').html(value);
+                }
+            });
+        });
 }
 
 function getCal() {
