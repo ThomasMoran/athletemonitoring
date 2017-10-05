@@ -16,38 +16,12 @@
     <link rel="stylesheet" type="text/css" href="calendar2.css">
     <script src="calendar2.js"></script>
 
+    <script src="moment.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="athleteMonitor.css">
 </head>
 
 <body>
-    <!-- Sashboard Header - Calendar/DateSelect -->
-    <div id="modalId" class="ui modal">
-        <i class="close icon"></i>
-        <div class="header">Sleep Metrics</div>
-        <div class="scrolling content">
-            <p>Very long content goes here</p>
-            <div id="entryForm">
-                <form class="ui form">
-                    <div class="field">
-                        <label>First Name</label>
-                        <input type="text" name="first-name" placeholder="First Name">
-                    </div>
-                    <div class="field">
-                        <label>Last Name</label>
-                        <input type="text" name="last-name" placeholder="Last Name">
-                    </div>
-                    <div class="field">
-                        <div class="ui checkbox">
-                            <input type="checkbox" tabindex="0" class="hidden">
-                            <label>I agree to the Terms and Conditions</label>
-                        </div>
-                    </div>
-                    <button class="ui button" type="submit">Submit</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
 
     <!-- MAIN SECTION -->
     <div id="main">
@@ -59,7 +33,8 @@
                 <div class="field">
                     <div id="workoutType">
                         <label><strong>Type</strong></label>
-                        <div class="radio-group">
+                        <input style="display:none;" type="text" name="wotype" placeholder="Last Name" >
+                        <div name="wotype" class="radio-group">
                             <div class='radio' data-value="One">Run</div>
                             <div class='radio' data-value="Two">Workout</div>
                             <div class='radio' data-value="Three">Gym</div>
@@ -71,33 +46,34 @@
                 <div class="three fields">
                     <div class="field">
                         <label>Duration (mins)</label>
-                        <input type="time" step="1" placeholder="hh:mm:ss">
+                        <input name="duration" type="time" step="1" placeholder="hh:mm:ss">
                     </div>
                     <div class="field">
                         <label>Distance (miles)</label>
-                        <input type="number" placeholder="e.g. 8.6">
+                        <input name="distance" type="number" placeholder="e.g. 8.6">
                     </div>
                     <div class="field">
-                        <label>Ave. Pace (min/mile)</label>
+                        <label for="pace1">Pace (mins/mile)</label>
                         <!-- <div class="rangeSliderValue">asas</div> -->
-                        <input type="text" placeholder="First Name" disabled="true">
+                        <input name="pace" type="text" placeholder="7:00">
                     </div>
                 </div>
                 <div class="fields">
                     <div class="field">
                         <label>Ave. HR (bpm)</label>
-                        <input type="number" min="20" max="250" placeholder="e.g. 140">
+                        <input name="avehr" type="number" min="20" max="250" placeholder="e.g. 140">
                     </div>
                 </div>
                 <div class="field">
                     <label>RPE:&nbsp;&nbsp;&nbsp;<span class="rangeSliderValue" id="rpe-range-display-1"></span></label>
-                    <!-- <input type="text" name="last-name" placeholder="Last Name"> -->
+                    <input style="display:none;" type="text" name="rpe" placeholder="Last Name" >
                     <div class="ui teal range" id="rpe-range-1"></div>
                     <br>
                 </div>
 
                 
-                <button class="ui button" type="submit">Submit</button>
+                <div class="ui primary submit button">Submit</div>
+                <div class="ui clear button">Clear</div>
             </form>
         </div>
     </div>
@@ -110,6 +86,14 @@
         </div>
     </div>
     <!-- JS scripts -->
+    <script >
+        $('.radio-group .radio').click(function() {
+            $(this).parent().find('.radio').removeClass('selected');
+            $(this).addClass('selected');
+            $('#cardHolder form').form('set value', 'wotype', $(this).text());
+            // var val = $(this).attr('data-value');
+        });
+    </script>
     <script src="athleteMonitor.js"></script>
 </body>
 

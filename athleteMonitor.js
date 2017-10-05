@@ -4,15 +4,10 @@ function main() {
 	// initChart();
     // modalPopUp();
     newEntryPage();
-    console.log('clicked yyyyyyyyyyyyyyyyyyyy');
 }
 
 function newEntryPage() {
-        $('.radio-group .radio').click(function() {
-            $(this).parent().find('.radio').removeClass('selected');
-            $(this).addClass('selected');
-            // var val = $(this).attr('data-value');
-        });
+        
 
         $(document).ready(function() {
             $('#rpe-range-1').range({
@@ -21,6 +16,7 @@ function newEntryPage() {
                 start: 5,
                 onChange: function(value) {
                     $('#rpe-range-display-1').html(value);
+                    $('#cardHolder form').form('set value', 'rpe', value);
                 }
             });
         });
@@ -31,9 +27,72 @@ function newEntryPage() {
                 start: 5,
                 onChange: function(value) {
                     $('#rpe-range-display-2').html(value);
+                    $('#cardHolder form').form('set value', 'rpe', value);
                 }
             });
         });
+        // Update Pace Entry
+         $('[name="distance"]').change(function() {
+            var $form = $('#cardHolder form');
+            var paceFields = $form.form('get values', ['duration', 'distance']);
+            if(paceFields.duration !== "" ) {
+                var a = paceFields.duration.split(':'); // split it at the colons
+                if(a.length === 3) {
+                    var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+                    var secondsPerMile = seconds/paceFields.distance;
+                    var pace = moment.utc(secondsPerMile*1000).format('HH:mm:ss');
+                    console.log(seconds + '  ');
+                    $('#cardHolder form').form('set value', 'pace', pace);
+                }  
+                else {
+                    // HOURS and MINS only
+                    var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60; 
+                    var secondsPerMile = seconds/paceFields.distance;
+                    var pace = moment.utc(secondsPerMile*1000).format('HH:mm:ss');
+                    console.log(seconds + '  ');
+                    $('#cardHolder form').form('set value', 'pace', pace);
+                }    
+            }
+        });
+        $('[name="duration"]').change(function() {
+            var $form = $('#cardHolder form');
+            var paceFields = $form.form('get values', ['duration', 'distance']);
+            if(paceFields.distance !== "") {
+                var a = paceFields.duration.split(':'); // split it at the colons
+                if(a.length === 3) {
+                    var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+                    var secondsPerMile = seconds/paceFields.distance;
+                    var pace = moment.utc(secondsPerMile*1000).format('HH:mm:ss');
+                    console.log(seconds + '  ');
+                    $('#cardHolder form').form('set value', 'pace', pace);
+                }  
+                else {
+                    // HOURS and MINS only
+                    var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60; 
+                    var secondsPerMile = seconds/paceFields.distance;
+                    var pace = moment.utc(secondsPerMile*1000).format('HH:mm:ss');
+                    console.log(seconds + '  ');
+                    $('#cardHolder form').form('set value', 'pace', pace);
+                }    
+            }
+        });
+        // on Form submit
+        $('#cardHolder form .submit.button').click( function() {
+            // console.log($('#cardHolder form').form('get values'));
+            // Do something
+
+        });
+        // $('.ui.form .submit.button')
+        //     .api({
+        //         url: 'server.php',
+        //         method: 'POST',
+        //         serializeForm: true,
+        //         beforeSend: function(settings) {},
+        //         onSuccess: function(data) {}
+        // });
+        
+        // colors = $form.form('get value', 'colors'),
+        // allFields = $form.form('get values')
 }
 
 function getCal() {
